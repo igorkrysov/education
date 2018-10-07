@@ -16,6 +16,10 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('dictionary-component', require('./components/DictionaryComponent.vue'));
+Vue.component('word-component', require('./components/WordComponent.vue'));
+Vue.component('word-translate-component', require('./components/WordTranslateComponent.vue'));
+Vue.component('repeat-word-component', require('./components/RepeatWordComponent.vue'));
 
 const app = new Vue({
     el: '#app'
