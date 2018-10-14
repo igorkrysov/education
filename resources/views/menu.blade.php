@@ -10,14 +10,15 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                    
                     <a class="dropdown-item" href="{{ route('dictionaries') }}">Dictionaries</a>
                     <a class="dropdown-item" href="{{ route('repeat.index') }}">Repeat</a>
+                    <a class="dropdown-item" href="{{ route('user.reader.index') }}">Reader</a>
+                    <a class="dropdown-item" href="{{ route('attention') }}">Attention</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ route('dictionary.index') }}">Dictionaries</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{{ route('dictionary.index') }}">Dictionaries</a>                    
+                    <a class="dropdown-item" href="{{ route('reader.index') }}">Reader</a>
                 </div>
             </li>        
         </ul>

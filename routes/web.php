@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dictionaries');
 });
 
 Route::resource('dictionary', 'DictionaryController');
 Route::resource('word', 'WordController');
+Route::resource('/reader', 'ReaderController');
+Route::get('/user/reader', 'ReaderController@userIndex')->name('user.reader.index');
+
+Route::get('/reader-hand/{id}', 'ReaderController@hand')->name('reader.hand');
+
 Route::get('/user/dictionaries', 'DictionaryController@dictionaries')->name('dictionaries');
 Route::get('/user/dictionary/{dictionary}', 'DictionaryController@dictionary')->name('dictionary');
 Route::get('/user/word-translate/{type}/{dictionary}', 'DictionaryController@wordTranslate')->name('word-translate');
@@ -29,6 +34,8 @@ Route::get('/user/word-repeat', 'RepeatWordController@index')->name('repeat.inde
 Route::get('/user/word-repeat/{word}', 'RepeatWordController@addRepeatWords')->name('to-repeat-words');
 Route::get('/user/repeat/words/{count}', 'RepeatWordController@getWords')->name('get-repeat-words');
 Route::get('/user/repeat/word-update/{word}', 'RepeatWordController@updateWords')->name('update-repeat-words');
+
+Route::view('/user/attention', 'user.attention.index')->name('attention');
 
 Auth::routes();
 

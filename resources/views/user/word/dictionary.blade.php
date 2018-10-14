@@ -9,13 +9,15 @@
                 <tr>
                     <th>#</th>
                     <th>word-translate</th>
-                    <th>translate-word</th>            
+                    <th>translate-word</th>           
+                    <th>to repeat</th>
                 </tr>
                 @foreach($dictionary->words as $word) 
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $word->word }}</td>
                         <td>{{ $word->translate }}</td>
+                        <td><a href="{{ route('to-repeat-words', $word->id) }}">to repeat</a></td>
                     </tr>
                 @endforeach
             </table>

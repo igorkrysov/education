@@ -57,7 +57,10 @@
                 countInPack: 10,
                 answer: false,
                 words: [],
-                currentWord: ""
+                currentWord:{
+                    word: '',
+                    translate: ''
+                }
             }
         },
         mounted() {

@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('es6-promise').polyfill();
 
 window.Vue = require('vue');
 
@@ -20,6 +21,11 @@ Vue.component('dictionary-component', require('./components/DictionaryComponent.
 Vue.component('word-component', require('./components/WordComponent.vue'));
 Vue.component('word-translate-component', require('./components/WordTranslateComponent.vue'));
 Vue.component('repeat-word-component', require('./components/RepeatWordComponent.vue'));
+
+Vue.component('reader-component', require('./components/ReaderComponent.vue'));
+Vue.component('reader-hand-component', require('./components/ReaderHandComponent.vue'));
+
+Vue.component('attention-component', require('./components/AttentionComponent.vue'));
 
 const app = new Vue({
     el: '#app'

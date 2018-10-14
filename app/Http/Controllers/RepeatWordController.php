@@ -16,11 +16,15 @@ class RepeatWordController extends Controller
      * @param  \App\Dictionary  $dictionary
      * @return \Illuminate\Http\Response
      */
-    public function addRepeatWords(Word $word)
+    public function addRepeatWords(Request $request, Word $word)
     {
         
         $repeatWord = RepeatWord::firstOrNew(['word_id' => $word->id]);
         $repeatWord->save();
+
+        if(!$request->ajax()) {
+            return redirect()->back();
+        }
     }
 
     public function index() 
