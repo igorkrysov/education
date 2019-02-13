@@ -32,8 +32,14 @@
         </div>
         <div class="row">
             <div class="col-12">
+              <br>
               <button @click="know()">I know</button>
               <button @click="notknow()">I don't know</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p><hr></p>
             </div>
         </div>
         <div class="row">
@@ -115,6 +121,7 @@
                     .then(response => {
                         this.countRepeat = response.data;
                         this.words.splice(this.words.indexOf(this.currentWord), 1);
+                        this.answer = false;
                         this.getWord();    
                     });
             }

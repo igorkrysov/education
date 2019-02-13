@@ -12,12 +12,12 @@
         </div>
         <div class="row">
             <div class="col-12">
-                {{ this.currentWord.word.word }}
+                {{ this.currentWord.word.word  }}
             </div>
         </div>
         <div v-if="answer" class="row">
             <div class="col-12">
-                {{ this.currentWord.word.translate }}
+                {{ this.currentWord.word.translate ? this.currentWord.word.translate  : ''}}
             </div>
         </div>
         <div class="row">
@@ -63,12 +63,15 @@
                         if(this.countAll > 0) {
                             this.getWord();
                         }
+                        console.log('getWords');
                     });
             },
             getWord() {
                 console.log()
                 this.currentWord = this.words[Math.floor(Math.random() * (this.words.length -1 ))];
-                console.log(this.currentWord.word.word);
+                // console.log("cur W B");
+                // console.log(this.currentWord.word.word);
+                // console.log("cur W E");
                 if(this.words.length == 0) {
                     this.getWords();
                 }

@@ -21,6 +21,9 @@ class RepeatWordController extends Controller
         
         $repeatWord = RepeatWord::firstOrNew(['word_id' => $word->id]);
         $repeatWord->save();
+        $word->wt = 1;
+        $word->tw = 1;
+        $word->save();
 
         if(!$request->ajax()) {
             return redirect()->back();
