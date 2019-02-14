@@ -49781,7 +49781,7 @@ var render = function() {
           ? _c("div", [
               _vm._v(
                 "\n                " +
-                  _vm._s(_vm.currentWord.word) +
+                  _vm._s(_vm.currentWord ? _vm.currentWord.word : "") +
                   "\n            "
               )
             ])
@@ -49791,7 +49791,7 @@ var render = function() {
           ? _c("div", [
               _vm._v(
                 "\n                " +
-                  _vm._s(_vm.currentWord.translate) +
+                  _vm._s(_vm.currentWord ? _vm.currentWord.translate : "") +
                   "\n            "
               )
             ])
@@ -49799,14 +49799,14 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm.answer
-      ? _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [
+    _c("div", { staticClass: "row", staticStyle: { height: "20px" } }, [
+      _vm.answer
+        ? _c("div", { staticClass: "col-12" }, [
             _vm.type == "wt"
               ? _c("div", [
                   _vm._v(
                     "\n                " +
-                      _vm._s(_vm.currentWord.translate) +
+                      _vm._s(_vm.currentWord ? _vm.currentWord.translate : "") +
                       "\n            "
                   )
                 ])
@@ -49816,14 +49816,14 @@ var render = function() {
               ? _c("div", [
                   _vm._v(
                     "\n                " +
-                      _vm._s(_vm.currentWord.word) +
+                      _vm._s(_vm.currentWord ? _vm.currentWord.word : "") +
                       "\n            "
                   )
                 ])
               : _vm._e()
           ])
-        ])
-      : _vm._e(),
+        : _vm._e()
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
@@ -50099,7 +50099,9 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
         _vm._v(
-          "\n            " + _vm._s(this.currentWord.word.word) + "\n        "
+          "\n            " +
+            _vm._s(this.currentWord ? this.currentWord.word.word : "") +
+            "\n        "
         )
       ])
     ]),

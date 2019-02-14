@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                {{ this.currentWord.word.word  }}
+                {{ this.currentWord ? this.currentWord.word.word : '' }}
             </div>
         </div>
         <div v-if="answer" class="row">
