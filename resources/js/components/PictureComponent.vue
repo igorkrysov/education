@@ -16,7 +16,9 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img v-if="hide == false" src="http://lorempixel.com/400/200/" alt="">
+                <!-- <img v-if="hide == false" src="http://lorempixel.com/400/200/" alt=""> -->
+                <img v-if="hide == false" src="https://picsum.photos/200/300/?random" alt="">
+                
                 
             </div>
         </div>
