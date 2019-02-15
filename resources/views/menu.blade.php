@@ -12,6 +12,7 @@
                     <a class="dropdown-item" href="{{ route('repeat.index') }}">Repeat</a>
                     <a class="dropdown-item" href="{{ route('user.reader.index') }}">Reader</a>
                     <a class="dropdown-item" href="{{ route('attention') }}">Attention</a>
+                    <a class="dropdown-item" href="{{ route('picture') }}">Picture</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
