@@ -26,6 +26,7 @@ Vue.component('reader-component', require('./components/ReaderComponent.vue'));
 Vue.component('reader-hand-component', require('./components/ReaderHandComponent.vue'));
 
 Vue.component('attention-component', require('./components/AttentionComponent.vue'));
+Vue.component('picture-component', require('./components/PictureComponent.vue'));
 
 const app = new Vue({
     el: '#app'

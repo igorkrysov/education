@@ -34,6 +34,7 @@ Route::get('/user/word-repeat', 'RepeatWordController@index')->name('repeat.inde
 Route::get('/user/word-repeat/{word}', 'RepeatWordController@addRepeatWords')->name('to-repeat-words');
 Route::get('/user/repeat/words/{count}', 'RepeatWordController@getWords')->name('get-repeat-words');
 Route::get('/user/repeat/word-update/{word}', 'RepeatWordController@updateWords')->name('update-repeat-words');
+Route::view('/user/picture', 'user.attention.picture')->name('picture');
 
 Route::view('/user/attention', 'user.attention.index')->name('attention');
 

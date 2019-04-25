@@ -13,27 +13,33 @@
         <div class="row">
             <div class="col-12">
                 <div v-if="type == 'wt'">
-                    {{ currentWord.word }}
+                    {{ currentWord ? currentWord.word : '' }}
                 </div>
                 <div v-if="type == 'tw'">
-                    {{ currentWord.translate }}
+                    {{ currentWord ? currentWord.translate : '' }}
                 </div>               
             </div>
         </div>
-        <div v-if="answer" class="row">
-            <div class="col-12">
+        <div  class="row" style="height: 20px;">
+            <div v-if="answer" class="col-12">
               <div v-if="type == 'wt'">
-                    {{ currentWord.translate }}
+                    {{ currentWord ? currentWord.translate : '' }}
                 </div>
                 <div v-if="type == 'tw'">
-                    {{ currentWord.word }}
+                    {{ currentWord ? currentWord.word : ''}}
                 </div>    
             </div>
         </div>
         <div class="row">
             <div class="col-12">
+              <br>
               <button @click="know()">I know</button>
               <button @click="notknow()">I don't know</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p><hr></p>
             </div>
         </div>
         <div class="row">
@@ -127,6 +133,7 @@
                     .then(response => {
                         this.countRepeat = response.data;
                         this.words.splice(this.words.indexOf(this.currentWord), 1);
+                        this.answer = false;
                         this.getWord();    
                     });
             }
