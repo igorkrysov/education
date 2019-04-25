@@ -57,6 +57,7 @@
                 countInPack: 10,
                 answer: false,
                 words: [],
+                lastTime: 0,
                 currentWord:{
                     word: '',
                     translate: ''
@@ -89,6 +90,11 @@
                 }
             },
             know() {
+                var time = Date.getUnixTime();
+                if (time - 1 < this.lastTime) {
+                    return;
+                }
+                this.lastTime = Date.getUnixTime();
                 if(!this.answer) {
                     this.answer = true;                    
                 } else {
@@ -103,6 +109,12 @@
                 }
             },
             notknow() {
+                var time = Date.getUnixTime();
+                if (time - 1 < this.lastTime) {
+                    return;
+                }
+                this.lastTime = Date.getUnixTime();
+                
                 if(!this.answer) {
                     this.answer = true;                    
                 } else {
