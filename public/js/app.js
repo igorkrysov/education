@@ -49660,6 +49660,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             countInPack: 10,
             answer: false,
             words: [],
+            lastTime: 0,
             currentWord: {
                 word: '',
                 translate: ''
@@ -49696,6 +49697,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         know: function know() {
             var _this2 = this;
 
+            var time = Math.round(new Date().getTime() / 100);
+            if (time - 2 < this.lastTime) {
+                return;
+            }
+            this.lastTime = Math.round(new Date().getTime() / 100);
             if (!this.answer) {
                 this.answer = true;
             } else {
@@ -49708,6 +49714,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         notknow: function notknow() {
+            var time = Math.round(new Date().getTime() / 100);
+            if (time - 2 < this.lastTime) {
+                return;
+            }
+            this.lastTime = Math.round(new Date().getTime() / 100);
+
             if (!this.answer) {
                 this.answer = true;
             } else {
@@ -51253,6 +51265,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -51308,7 +51322,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-6" }, [
         _vm.hide == false
           ? _c("img", {
-              attrs: { src: "http://lorempixel.com/400/200/", alt: "" }
+              attrs: { src: "https://picsum.photos/200/300/?random", alt: "" }
             })
           : _vm._e()
       ])

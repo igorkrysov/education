@@ -96,11 +96,11 @@
                 }
             },
             know() {
-                var time = Date.getUnixTime();
-                if (time - 1 < this.lastTime) {
+                var time =  Math.round(new Date().getTime()/100)
+                if (time - 2 < this.lastTime) {
                     return;
                 }
-                this.lastTime = Date.getUnixTime();
+                this.lastTime =  Math.round(new Date().getTime()/100)
                 if(!this.answer) {
                     this.answer = true;                    
                 } else {
@@ -115,11 +115,11 @@
                 }
             },
             notknow() {
-                var time = Date.getUnixTime();
-                if (time - 1 < this.lastTime) {
+                var time = Math.round(new Date().getTime()/100);
+                if (time - 2 < this.lastTime) {
                     return;
                 }
-                this.lastTime = Date.getUnixTime();
+                this.lastTime =  Math.round(new Date().getTime()/100)
                 
                 if(!this.answer) {
                     this.answer = true;                    
