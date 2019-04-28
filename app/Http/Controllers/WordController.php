@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Word;
 use Illuminate\Http\Request;
+use App\Events\AddNewWord;
 
 class WordController extends Controller
 {
@@ -43,7 +44,7 @@ class WordController extends Controller
         ]);
 
         $word = Word::create($request->all());
-
+        event(new AddNewWord($request->dictionary_id));        
         if($request->ajax()) {
             return $word;
         }
