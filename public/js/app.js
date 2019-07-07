@@ -14335,9 +14335,9 @@ Vue.component('reader-hand-component', __webpack_require__(64));
 Vue.component('attention-component', __webpack_require__(69));
 Vue.component('picture-component', __webpack_require__(72));
 
-var app = new Vue({
-  el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
 
 /***/ }),
 /* 16 */
