@@ -123,8 +123,11 @@ class DictionaryController extends Controller
      * @param  \App\Dictionary  $dictionary
      * @return \Illuminate\Http\Response
      */
-    public function dictionary(Dictionary $dictionary)
+    public function dictionary(Request $request, Dictionary $dictionary)
     {
+        if ($request->ajax()) {
+            return response()->json(['status' => true, 'words' => $dictionary->words]);
+        }
         return view('user.word.dictionary', ['dictionary' => $dictionary]);
     }
 

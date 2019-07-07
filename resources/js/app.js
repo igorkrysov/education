@@ -28,6 +28,8 @@ Vue.component('reader-hand-component', require('./components/ReaderHandComponent
 Vue.component('attention-component', require('./components/AttentionComponent.vue'));
 Vue.component('picture-component', require('./components/PictureComponent.vue'));
 
-// const app = new Vue({
-//     el: '#app'
-// });
+Vue.component('words-list-component', require('./components/WordsListComponent.vue'));
+
+const app = new Vue({
+    el: '#app'
+});
