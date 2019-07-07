@@ -51471,11 +51471,7 @@ var render = function() {
             _vm._l(_vm.words, function(word, index) {
               return _c(
                 "tr",
-                {
-                  class: {
-                    "table-warning": _vm.checkboxes[index] !== undefined
-                  }
-                },
+                { class: { "table-warning": _vm.checkboxes[index] } },
                 [
                   _c("td", [_vm._v(_vm._s(index + 1))]),
                   _vm._v(" "),

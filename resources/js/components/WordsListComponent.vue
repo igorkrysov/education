@@ -12,7 +12,7 @@
                         <th>to repeat</th>
                     </tr>
                     
-                        <tr v-for="(word, index)  in words" v-bind:class="{ 'table-warning': checkboxes[index] !== undefined }">
+                        <tr v-for="(word, index)  in words" v-bind:class="{ 'table-warning': checkboxes[index] }">
                             <td>{{ index + 1 }}</td>
                             <td><input type="checkbox" v-model="checkboxes[index]"></td>
                             <td>{{ word.word }}</td>
